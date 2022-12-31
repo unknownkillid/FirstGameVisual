@@ -40,7 +40,7 @@ body {
 
 /* navbar flex ------------------------ */
 
-.score-bg{
+.score-bg {
     width: 150px;
 }
 
@@ -54,19 +54,19 @@ body {
 
 /* health bar --------------- */
 
-.health-bar{
+.health-bar {
     margin-right: 70px;
 }
 
 /* buttons --------------------*/
 
-.restart-button{
+.restart-button {
     font-size: xx-large;
     cursor: pointer;
     border-radius: 50%;
 }
 
-.restart-button:hover{
+.restart-button:hover {
     text-shadow: 0px 0px 30px var(--primary-color);
     transition: 0.1s;
     animation-name: arrowrotate;
@@ -76,8 +76,8 @@ body {
     animation-fill-mode: forwards;
 }
 
-@keyframes arrowrotate{
-    100%{
+@keyframes arrowrotate {
+    100% {
         transform: rotateZ(-100deg);
         transition: 0s;
     }
@@ -90,7 +90,7 @@ body {
     border-radius: 50%;
 }
 
-.settings-button:hover{
+.settings-button:hover {
     text-shadow: 0px 0px 30px var(--primary-color);
     transition: 0.5s;
     color: var(--primary-color);
@@ -101,20 +101,20 @@ body {
     animation-iteration-count: 1;
 }
 
-@keyframes buttonspin{
-    100%{
+@keyframes buttonspin {
+    100% {
         transform: rotateZ(1553deg);
     }
 }
 
-.res-set-butts i{
+.res-set-butts i {
     padding: 5px;
 }
 
 /* rocket styles ------------------- */
 
 
-#rocket{
+#rocket {
     transform: rotateZ(-47deg);
     position: absolute;
     top: 82%;
@@ -123,7 +123,7 @@ body {
 
 /* start game container && button ----------------------- */
 
-#start-game-container{
+#start-game-container {
     width: 100%;
     height: 90%;
     /* background-color: rgba(0, 0, 0, 0.849);
@@ -134,11 +134,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    /* z-index: 1000; */
     transition: 1s;
 }
 
-#start{
+#start {
     font-size: xx-large;
     width: 200px;
     cursor: pointer;
@@ -152,7 +152,7 @@ body {
     transition: 1s;
 }
 
-#start:hover{
+#start:hover {
     background-color: var(--primary-color);
     transition: 0.5s;
     box-shadow: 0px 0px 30px var(--primary-color);
@@ -164,16 +164,40 @@ body {
 }
 
 
-@keyframes buttonone{
+@keyframes buttonone {
     0% {
         color: var(--primary-color);
     }
 
-    50%{
+    50% {
         color: rgb(255, 168, 38);
     }
 
-    100%{
+    100% {
         color: var(--primary-color);
     }
+}
+
+#sett-menu {
+    width: 300px;
+    height: 200px;
+    background-color: rgb(65, 0, 0);
+    display: block;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: 0px 0px 10px rgb(179, 179, 179);
+    border-radius: 10px;
+    color: rgb(196, 196, 196);
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    text-align: center;
+    display: none;
+}
+
+.setting-inputs {
+    margin-top: 40px;
+    font-size: xx-large;
 }

@@ -34,8 +34,8 @@
                     </div>
 
                     <div class="res-set-butts">
-                        <i class="fa-solid fa-arrow-rotate-left restart-button" onclick=""></i>
-                        <i class="fa-solid fa-gear settings-button" onclick=""></i>
+                        <i class="fa-solid fa-arrow-rotate-left restart-button" onclick="reset()"></i>
+                        <i class="fa-solid fa-gear settings-button" onclick="settingsHide()"></i>
                     </div>
                 </div>
             </nav>
@@ -45,6 +45,25 @@
             <button id="start" onclick="hide()"><span class="first-color">Start</span> <span
                     class="second-color">Game</span></button>
         </div>
+
+        <div class="settings-container" id="sett-menu">
+            <div>
+                <h1 class="sett-title">Settings</h1>
+            </div>
+
+            <div class="setting-inputs">
+                <div>
+                    <label for="check-sett">Music</label>
+                    <input type="checkbox" class="sett-check" id="check-sett">
+                </div>
+
+                <div>
+                    <label for="check-sound">Sound</label>
+                    <input type="checkbox" class="sound-check" id="check-sound">
+                </div>
+            </div>
+        </div>
+
 
         <div>
             <img src="https://i.postimg.cc/JhhhGJ6F/rocket-joypixels.gif" id="rocket" width="100px" alt="">
