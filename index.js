@@ -30,6 +30,8 @@ function ifdisplay(){
 }
 
 
+// rocket functions and shooting ----------------------------
+
 const Start = document.querySelector("#start-game-container");
 let x = 706;
 let y = 549;
@@ -87,22 +89,28 @@ function accelerateRocket() {
     rocket.style.top = y + "px";
     if (event.code === "Space") {
       currentBulletId++;
-      const tyvia = document.createElement("div");
-      tyvia.id = `bullet${currentBulletId}`;
+      const tyvia = document.getElementById("bullet-animated");
+      tyvia.id = `bullet-animated${currentBulletId}`;
       document.body.appendChild(tyvia);
-      const bullet = document.getElementById(`bullet${currentBulletId}`);
+      const bullet = document.getElementById(`bullet-animated${currentBulletId}`);
       bullet.style.position = "absolute";
-      bullet.style.top = y - 45 + "px";
-      bullet.style.left = x + 59 + "px";
-      bullet.style.background = "red";
+      bullet.style.top = y - 60 + "px";
+      bullet.style.left = x + 40 + "px";
+      bullet.style.background = "none";
       bullet.style.height = "50px";
-      bullet.style.width = "3px";
+      bullet.style.width = "50px";
+
+      if (event.code = "space"){
+        tyvia.style.display='block'
+      }
+
+
       let position = bullet.offsetTop;
       const interval = setInterval(function () {
-        position -= 50;
+        position -= 20;
         bullet.style.top = position + "px";
 
-        if (position <= MIN_Y - 70) {
+        if (position <= MIN_Y - 40) {
           bullet.remove();
           clearInterval(interval);
         }

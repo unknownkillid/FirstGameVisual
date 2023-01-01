@@ -27,7 +27,6 @@ body {
     transition: 1s;
     margin-top: 70px;
     color: var(--primary-color);
-    z-index: 1;
     background-image: url(https://i.postimg.cc/hGV7SKNZ/starfall-gif-72.webp);
     border-radius: 10px;
     box-shadow: 0px 0px 10px var(--primary-color);
@@ -200,4 +199,12 @@ body {
 .setting-inputs {
     margin-top: 40px;
     font-size: xx-large;
+}
+
+
+.bullet-shoot{
+    width: 50px;
+    position: absolute;
+    transform: rotateZ(90deg);
+    display: none;
 }
