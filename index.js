@@ -1,45 +1,61 @@
-// start game small window hide 
-function hide(){
-    document.getElementById('start-game-container').style.display='none';
+let startGame = document.getElementById('start-game-container');
+let settingsMenu = document.getElementById('sett-menu');
+let shopMenu = document.getElementById('shop-container');
+
+function startingGame() {
+  startGame.style.display = 'none'
 }
 
-// reset game button function --------
-
-function reset(){
-  document.getElementById('start-game-container').style.display='';
-}
-
-// settings button function----------
-
-function settingsHide(){
-  const b = document.getElementById('sett-menu');
-  if (b.style.display === 'block'){
-    b.style.display ='none';
-  } else{
-    b.style.display ='block';
-  }
-}
-
-function ifdisplay(){
-  const f = document.getElementById('sett-menu');
-  const w = document.getElementById('start-game-container');
-
-  if (f.style.display === 'block') {
-    w.style.display = 'none';
-  }
-}
-
-function shop(){
-  const shop = document.getElementById('shop-container');
-  if (shop.style.display === 'block'){
-    shop.style.display = 'none';
+function settingMenuHide() {
+  if (settingsMenu.style.display === 'block') {
+    settingsMenu.style.display = 'none';
   } else {
-    shop.style.display = 'block';
+    settingsMenu.style.display = 'block';
   }
 }
 
-// ფუნქცია უნდა გავაკეთო გლობალური ცვლადებით რომ ყველა ფუნქციაში არ 
-// მომიწიოს გამოძახება თავიდან
+function reset() {
+  location.reload();
+}
+
+function shopMenuHide() {
+  if (shopMenu.style.display === 'block') {
+    shopMenu.style.display = 'none';
+  } else {
+    shopMenu.style.display = 'block';
+  }
+}
+
+function shopShowOtherHide() {
+  if (shopMenu.style.display === 'block') {
+    settingsMenu.style.display = 'none';
+    startGame.style.display = 'none';
+  }
+}
+
+function settingsMenuOtherHide() {
+  if (settingsMenu.style.display === 'block') {
+    shopMenu.style.display = 'none';
+    startGame.style.display = 'none';
+  }
+}
+
+function startGameOtherHide() {
+  if (startGame.style.display = 'block') {
+    shopMenu.style.display = 'none';
+    settingsMenu.style.display = 'none';
+  }
+}
+
+function closeShopMenu() {
+    if (shopMenu.style.display === 'block') {
+      shopMenu.style.display = 'none';
+    } 
+}
+
+function xSettingsMenu() {
+  settingsMenu.style.display = 'none';
+}
 
 
 // rocket functions and shooting ----------------------------
@@ -47,7 +63,7 @@ function shop(){
 const Start = document.querySelector("#start-game-container");
 let x = 706;
 let y = 549;
-const MIN_X = 390;
+const MIN_X = 0;
 const MAX_X = 1029;
 const MIN_Y = 150;
 const MAX_Y = 560;
@@ -67,18 +83,18 @@ function accelerateRocket() {
       case "ArrowUp":
         if (y - 10 < MIN_Y) {
           break;
-        } else{
-          rocket.style.transform='rotateZ(-47deg)';
+        } else {
+          rocket.style.transform = 'rotateZ(-47deg)';
         }
 
         y -= 50;
         break;
-  
+
       case "ArrowLeft":
         if (x - 10 < MIN_X) {
           break;
-        } else{
-          rocket.style.transform='rotateZ(-84deg)';
+        } else {
+          rocket.style.transform = 'rotateZ(-84deg)';
         }
 
         x -= 50;
@@ -87,10 +103,10 @@ function accelerateRocket() {
       case "ArrowDown":
         if (y + 10 > MAX_Y) {
           break;
-        }else{
-          rocket.style.transform='rotateZ(-47deg)';
+        } else {
+          rocket.style.transform = 'rotateZ(-47deg)';
         }
-        
+
         y += 50;
         break;
 
@@ -98,9 +114,9 @@ function accelerateRocket() {
         if (x + 10 > MAX_X) {
           break;
         } else {
-          rocket.style.transform='rotateZ(-10deg)';
+          rocket.style.transform = 'rotateZ(-10deg)';
         }
-          
+
         x += 50;
         break;
     }
@@ -120,8 +136,8 @@ function accelerateRocket() {
       bullet.style.height = "50px";
       bullet.style.width = "50px";
 
-      if (event.code = "space"){
-        tyvia.style.display='block';
+      if (event.code = "space") {
+        tyvia.style.display = 'block';
       }
 
 
