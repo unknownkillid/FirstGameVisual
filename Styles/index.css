@@ -43,6 +43,7 @@ body {
     width: 150px;
 }
 
+
 .navbar-menu {
     display: flex;
     justify-content: space-between;
@@ -54,7 +55,7 @@ body {
 /* health bar --------------- */
 
 .health-bar {
-    margin-right: 70px;
+    margin-right: 20px;
 }
 
 /* buttons --------------------*/
@@ -63,6 +64,40 @@ body {
     font-size: xx-large;
     cursor: pointer;
     border-radius: 50%;
+}
+
+.buy-menu{
+    font-size: xx-large;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.buy-menu:hover {
+    text-shadow: 0px 0px 30px var(--primary-color);
+    transition: 0.1s;
+    animation-name: menushake;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes menushake{
+    0%{
+        transform: rotateZ(0deg);
+    }
+
+    50%{
+        transform: rotateZ(-22deg);
+    }
+
+    80%{
+        transform: rotateZ(22deg);
+    }
+
+    100%{
+        transform: rotateZ(0deg);
+    }
 }
 
 .restart-button:hover {
@@ -110,21 +145,27 @@ body {
     padding: 5px;
 }
 
+
+
 /* rocket styles ------------------- */
 
+/* #rocket-container{
+    position: relative;
+} */
 
 #rocket {
     transform: rotateZ(-47deg);
     position: absolute;
     top: 82%;
     left: 46%;
+    transition: 0.8s;
 }
 
 /* start game container && button ----------------------- */
 
 #start-game-container {
     width: 100%;
-    height: 90%;
+    height: 70%;
     /* background-color: rgba(0, 0, 0, 0.849);
     /* box-shadow: 0px 0px 10px var(--primary-color);
     border: 2px dotted var(--primary-color);
@@ -202,9 +243,79 @@ body {
 }
 
 
-.bullet-shoot{
+.bullet-shoot {
     width: 50px;
     position: absolute;
     transform: rotateZ(90deg);
     display: none;
 }
+
+/* rocket animations for javascript --------- */
+
+
+.turnleft{
+    animation-name: turnleft;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes turnleft{
+    from {
+        transform: rotateZ(-10deg);
+    }
+
+    to {
+        transform: rotateZ(-47deg);
+    }
+}
+
+#shop-container{
+    width: 400px;
+    height: 300px;
+    background: white;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: rgb(65, 0, 0);
+    box-shadow: 0px 0px 10px rgb(179, 179, 179);
+    border-radius: 10px;
+    color: rgb(196, 196, 196);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    align-content: flex-start;
+    font-family: 'VT323', monospace;
+    display: none;
+}
+
+
+.coins{
+    font-size:xx-large;
+    padding: 20px;
+    animation-name: dollar;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    background: "";
+    border-radius: 100%;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes dollar{
+    0%{
+        transform: rotateY(360deg);
+    }
+
+    50%{
+        transform: rotateY(-360deg);
+    }
+
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+

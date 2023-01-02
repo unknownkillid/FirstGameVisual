@@ -29,6 +29,18 @@ function ifdisplay(){
   }
 }
 
+function shop(){
+  const shop = document.getElementById('shop-container');
+  if (shop.style.display === 'block'){
+    shop.style.display = 'none';
+  } else {
+    shop.style.display = 'block';
+  }
+}
+
+// ფუნქცია უნდა გავაკეთო გლობალური ცვლადებით რომ ყველა ფუნქციაში არ 
+// მომიწიოს გამოძახება თავიდან
+
 
 // rocket functions and shooting ----------------------------
 
@@ -50,58 +62,66 @@ function accelerateRocket() {
   const rocket = document.getElementById("rocket");
   document.addEventListener("keydown", (event) => {
     // Attach keys to movement
+
     switch (event.key) {
       case "ArrowUp":
         if (y - 10 < MIN_Y) {
           break;
+        } else{
+          rocket.style.transform='rotateZ(-47deg)';
         }
-        y -= 10;
 
+        y -= 50;
         break;
+  
       case "ArrowLeft":
         if (x - 10 < MIN_X) {
           break;
+        } else{
+          rocket.style.transform='rotateZ(-84deg)';
         }
-        x -= 10;
-        // setTimeout(() => {
-        //   interval = setInterval(() => {
-        //     angle += 10;
-        //     rocket.style.transform = `rotate(${angle}deg)`;
-        //   }, 100);
-        // }, 2000);
 
+        x -= 50;
         break;
+
       case "ArrowDown":
         if (y + 10 > MAX_Y) {
           break;
+        }else{
+          rocket.style.transform='rotateZ(-47deg)';
         }
-        y += 10;
+        
+        y += 50;
         break;
+
       case "ArrowRight":
         if (x + 10 > MAX_X) {
           break;
+        } else {
+          rocket.style.transform='rotateZ(-10deg)';
         }
-        x += 10;
+          
+        x += 50;
         break;
     }
+
 
     rocket.style.left = x + "px";
     rocket.style.top = y + "px";
     if (event.code === "Space") {
       currentBulletId++;
       const tyvia = document.getElementById("bullet-animated");
-      tyvia.id = `bullet-animated${currentBulletId}`;
+      tyvia.id = `bullet${currentBulletId}`;
       document.body.appendChild(tyvia);
-      const bullet = document.getElementById(`bullet-animated${currentBulletId}`);
+      const bullet = document.getElementById(`bullet${currentBulletId}`);
       bullet.style.position = "absolute";
       bullet.style.top = y - 60 + "px";
       bullet.style.left = x + 40 + "px";
-      bullet.style.background = "none";
       bullet.style.height = "50px";
       bullet.style.width = "50px";
 
       if (event.code = "space"){
-        tyvia.style.display='block'
+        tyvia.style.display='block';
       }
 
 

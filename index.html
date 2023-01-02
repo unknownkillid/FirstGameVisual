@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -26,26 +27,27 @@
                     <div class="score-bg">
                         <h2 id="score">SCORE={0}</h2>
                     </div>
-
+                    <!-- heals =========================== -->
                     <div class="health-bar">
                         <img src="https://i.postimg.cc/kgHXLL41/giphy.gif" width="50px" height="50px" alt="">
                         <img src="https://i.postimg.cc/kgHXLL41/giphy.gif" width="50px" height="50px" alt="">
                         <img src="https://i.postimg.cc/kgHXLL41/giphy.gif" width="50px" height="50px" alt="">
                     </div>
-
+                    <!-- menu buttons ====================== -->
                     <div class="res-set-butts">
+                        <i class="fa-brands fa-shopify buy-menu" onclick="shop()" id="buy"></i>
                         <i class="fa-solid fa-arrow-rotate-left restart-button" id="restart" onclick="reset()"></i>
                         <i class="fa-solid fa-gear settings-button" onclick="settingsHide(), ifdisplay()"></i>
                     </div>
                 </div>
             </nav>
         </header>
-
+        <!-- start game button==================== -->
         <div id="start-game-container">
             <button id="start" onclick="hide()"><span class="first-color">Start</span> <span
                     class="second-color">Game</span></button>
         </div>
-
+        <!-- settings menu ======================== -->
         <div class="settings-container" id="sett-menu">
             <div>
                 <h1 class="sett-title">Settings</h1>
@@ -64,10 +66,16 @@
             </div>
         </div>
 
+        <div id="shop-container">
+            <i class="fa-solid fa-dollar-sign coins" id="bullet1"></i>
+            <i class="fa-solid fa-dollar-sign coins" id="bullet2"></i>
+            <i class="fa-solid fa-dollar-sign coins" id="bullet3"></i>
+            <i class="fa-solid fa-dollar-sign coins" id="bullet4"></i>
+        </div>
+        <!-- bullet and rocket ==================== -->
         <img src="https://i.postimg.cc/cCmvc3dQ/giphy-2.gif" class="bullet-shoot" id="bullet-animated" alt="">
 
-
-        <div>
+        <div id="rocket-container">
             <img src="https://i.postimg.cc/JhhhGJ6F/rocket-joypixels.gif" id="rocket" width="100px" alt="">
         </div>
     </div>
