@@ -63,7 +63,7 @@ function xSettingsMenu() {
 const Start = document.querySelector("#start-game-container");
 let x = 706;
 let y = 549;
-const MIN_X = 0;
+const MIN_X = -4;
 const MAX_X = 1029;
 const MIN_Y = 150;
 const MAX_Y = 560;
