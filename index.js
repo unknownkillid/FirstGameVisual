@@ -1,6 +1,22 @@
 let startGame = document.getElementById('start-game-container');
 let settingsMenu = document.getElementById('sett-menu');
 let shopMenu = document.getElementById('shop-container');
+let clickAudio = new Audio();
+let startAudio = new Audio();
+clickAudio.src = "Items/sounds/clicksound.mp3";
+startAudio.src = "Items/sounds/startGame.wav"
+
+function startGameSound(){
+  startAudio.play();
+}
+
+function onClickSound(){
+  clickAudio.play();
+}
+
+function pauseAllAudio(){
+  clickAudio.pause();
+}
 
 function startingGame() {
   startGame.style.display = 'none'
@@ -57,6 +73,10 @@ function xSettingsMenu() {
   settingsMenu.style.display = 'none';
 }
 
+// sounds on / off function -------
+
+
+// amis dedas me sheveciii ------
 
 // rocket functions and shooting ----------------------------
 
