@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Rocket Game</title>
     <link rel="stylesheet" href="Styles/index.css">
     <link rel="icon"
@@ -47,7 +48,7 @@
         </header>
         <!-- start game button==================== -->
         <div id="start-game-container">
-            <button id="start" onclick="startingGame(), startGameSound()">Start Game</button>
+            <button id="start" onclick="startingGame(), startGameSound(), rocketStart()">Start Game</button>
         </div>
         <!-- settings menu ======================== -->
         <div class="settings-container" id="sett-menu">
@@ -63,7 +64,7 @@
             <div class="setting-inputs">
                 <div>
                     <label for="check-sett">Music Off/On</label>
-                    <input type="checkbox" class="sett-check" id="check-sett">
+                    <input type="checkbox" onclick="autoPlayMusic()" class="sett-check" id="check-sett">
                 </div>
 
                 <div>
@@ -87,12 +88,19 @@
             </header>
         </div>
         <!-- bullet and rocket ==================== -->
-        <img src="https://i.postimg.cc/cCmvc3dQ/giphy-2.gif" class="bullet-shoot" id="bullet-animated">
+
+        <div class="bullet-container">
+            <img src="https://i.postimg.cc/cCmvc3dQ/giphy-2.gif" class="bullet-shoot" id="bullet-animated">
+        </div>
 
         <div class="rocket-container">
             <img src="https://i.postimg.cc/JhhhGJ6F/rocket-joypixels.gif" id="rocket" width="100px">
         </div>
+
+
     </div>
+
+    <audio src="Items/sounds/music/gameMusic.mp3" id="my-audio"></audio>
 
     <script src="index.js"></script>
 </body>
