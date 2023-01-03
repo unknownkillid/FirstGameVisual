@@ -4,7 +4,7 @@ let shopMenu = document.getElementById('shop-container');
 let clickAudio = new Audio();
 let startAudio = new Audio();
 clickAudio.src = "Items/sounds/clicksound.mp3";
-startAudio.src = "Items/sounds/startGame.wav"
+startAudio.src = "Items/sounds/startGame.wav";
 
 function startGameSound(){
   startAudio.play();
@@ -81,14 +81,14 @@ function xSettingsMenu() {
 // rocket functions and shooting ----------------------------
 
 const Start = document.querySelector("#start-game-container");
-let x = 706;
-let y = 549;
-const MIN_X = -4;
-const MAX_X = 1029;
-const MIN_Y = 150;
-const MAX_Y = 560;
+let x = 292;
+let y = 500;
+const left_side = 0;
+const right_side = 580;
+const top_max = 100;
+const bottom_max = 560;
 let angle = 0;
-
+ 
 var currentBulletId = 0;
 Start.addEventListener("click", () => {
   accelerateRocket();
@@ -101,7 +101,7 @@ function accelerateRocket() {
 
     switch (event.key) {
       case "ArrowUp":
-        if (y - 10 < MIN_Y) {
+        if (y - 10 < top_max) {
           break;
         } else {
           rocket.style.transform = 'rotateZ(-47deg)';
@@ -111,7 +111,7 @@ function accelerateRocket() {
         break;
 
       case "ArrowLeft":
-        if (x - 10 < MIN_X) {
+        if (x - 10 < left_side) {
           break;
         } else {
           rocket.style.transform = 'rotateZ(-84deg)';
@@ -121,7 +121,7 @@ function accelerateRocket() {
         break;
 
       case "ArrowDown":
-        if (y + 10 > MAX_Y) {
+        if (y + 10 > bottom_max) {
           break;
         } else {
           rocket.style.transform = 'rotateZ(-47deg)';
@@ -131,7 +131,7 @@ function accelerateRocket() {
         break;
 
       case "ArrowRight":
-        if (x + 10 > MAX_X) {
+        if (x + 10 > right_side) {
           break;
         } else {
           rocket.style.transform = 'rotateZ(-10deg)';
